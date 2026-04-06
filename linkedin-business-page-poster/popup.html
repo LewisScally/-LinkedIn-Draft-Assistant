@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>LinkedIn Business Page Poster</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="popup-body">
+    <div class="container">
+      <h1>Page Poster</h1>
+
+      <div class="row">
+        <span id="statusBadge" class="badge badge-neutral">Unknown</span>
+        <span id="pageName" class="muted">Page: -</span>
+      </div>
+
+      <label for="postText">Draft</label>
+      <textarea id="postText" rows="7" placeholder="Write or paste your LinkedIn Page post..."></textarea>
+      <div class="row between">
+        <span id="charCount" class="muted">0 chars</span>
+        <span id="charWarn" class="warn hidden">Above 3000 chars</span>
+      </div>
+
+      <div class="grid two">
+        <button id="openPanelBtn">Open Panel</button>
+        <button id="checkStatusBtn">Check Status</button>
+        <button id="createPostBtn">Create Post</button>
+        <button id="insertDraftBtn">Insert Draft</button>
+        <button id="publishBtn">Publish</button>
+        <button id="dryRunBtn">Dry Run</button>
+      </div>
+
+      <div class="section">
+        <label for="draftName">Draft Name</label>
+        <input id="draftName" type="text" placeholder="e.g. Weekly update" />
+        <button id="saveDraftBtn">Save Draft</button>
+      </div>
+
+      <div class="section">
+        <label class="switch-row">
+          <input id="reviewModeToggle" type="checkbox" />
+          <span>Review Mode</span>
+        </label>
+        <label class="switch-row">
+          <input id="autoPostToggle" type="checkbox" />
+          <span>Auto-post</span>
+        </label>
+        <p id="autoPostNote" class="warn small">
+          Auto-post is disabled while Review Mode is on.
+        </p>
+      </div>
+
+      <h2>Recent Activity</h2>
+      <pre id="logPane" class="log-pane"></pre>
+    </div>
+
+    <script src="utils/storage.js"></script>
+    <script src="utils/logger.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
