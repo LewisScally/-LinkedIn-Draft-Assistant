@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>LinkedIn Business Page Poster - Side Panel</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="panel-body">
+    <div class="container">
+      <h1>LinkedIn Business Page Poster</h1>
+
+      <div class="row">
+        <span id="statusBadge" class="badge badge-neutral">Unknown</span>
+        <span id="pageName" class="muted">Page: -</span>
+      </div>
+
+      <div class="section">
+        <label for="draftSelect">Saved Drafts</label>
+        <div class="row">
+          <select id="draftSelect"></select>
+          <button id="loadDraftBtn">Load</button>
+          <button id="deleteDraftBtn" class="danger">Delete</button>
+        </div>
+      </div>
+
+      <label for="postText">Post Text</label>
+      <textarea id="postText" rows="14" placeholder="Write or load your post draft..."></textarea>
+      <div class="row between">
+        <span id="charCount" class="muted">0 chars</span>
+        <span id="charWarn" class="warn hidden">Warning: above 3000 chars</span>
+      </div>
+
+      <div class="section">
+        <label for="draftName">Draft Name</label>
+        <div class="row">
+          <input id="draftName" type="text" placeholder="Draft name" />
+          <button id="saveDraftBtn">Save Draft</button>
+        </div>
+      </div>
+
+      <div class="grid two">
+        <button id="checkStatusBtn">Check Status</button>
+        <button id="createPostBtn">Create Post</button>
+        <button id="insertDraftBtn">Insert Draft</button>
+        <button id="publishBtn">Publish</button>
+        <button id="dryRunBtn">Dry Run</button>
+      </div>
+
+      <div class="section">
+        <label class="switch-row">
+          <input id="reviewModeToggle" type="checkbox" />
+          <span>Review Mode</span>
+        </label>
+        <label class="switch-row">
+          <input id="autoPostToggle" type="checkbox" />
+          <span>Auto-post</span>
+        </label>
+        <p id="autoPostWarning" class="warn small">Auto-post is disabled while Review Mode is enabled.</p>
+      </div>
+
+      <h2>Activity Log</h2>
+      <pre id="logPane" class="log-pane tall"></pre>
+    </div>
+
+    <script src="utils/storage.js"></script>
+    <script src="utils/logger.js"></script>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>
